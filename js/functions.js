@@ -6,8 +6,6 @@ const palindrom = (str) => {
   return str === reversedStr;
 };
 
-console.log(checkLengthStr('Привет', 6));
-console.log(checkLengthStr('проверяемая строка', 18));
-console.log(checkLengthStr('проверяемая строка', 10));
-
-console.log(palindrom('Лёша на полке клопа нашёл '));
+checkLengthStr('проверяемая строка', 18);
+checkLengthStr('проверяемая строка', 10)
+palindrom('Лёша на полке клопа нашёл ');
