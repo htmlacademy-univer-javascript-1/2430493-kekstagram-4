@@ -7,5 +7,5 @@ const palindrom = (str) => {
 };
 
 checkLengthStr('проверяемая строка', 18);
-checkLengthStr('проверяемая строка', 10)
+checkLengthStr('проверяемая строка', 10);
 palindrom('Лёша на полке клопа нашёл ');
