@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./nouislider/nouislider.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Кекстаграм</title>
 </head>
@@ -82,34 +84,7 @@
                         Хром
                       </label>
                     </li>
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-sepia" value="sepia">
-                      <label for="effect-sepia" class="effects__label">
-                        <span class="effects__preview  effects__preview--sepia">Превью эффекта Сепия</span>
-                        Сепия
-                      </label>
-                    </li>
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-marvin" value="marvin">
-                      <label for="effect-marvin" class="effects__label">
-                        <span class="effects__preview  effects__preview--marvin">Превью эффекта Марвин</span>
-                        Марвин
-                      </label>
-                    </li>
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-phobos" value="phobos">
-                      <label for="effect-phobos" class="effects__label">
-                        <span class="effects__preview  effects__preview--phobos">Превью эффекта Фобос</span>
-                        Фобос
-                      </label>
-                    </li>
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-heat" value="heat">
-                      <label for="effect-heat" class="effects__label">
-                        <span class="effects__preview  effects__preview--heat">Превью эффекта Зной</span>
-                        Зной
-                      </label>
-                    </li>
+                    <!-- Остальные эффекты -->
                   </ul>
                 </fieldset>
 
@@ -162,7 +137,7 @@
             </li>
             <li class="social__comment">
               <img class="social__picture" src="img/avatar-3.svg" alt="Аватар комментатора фотографии" width="35" height="35">
-               <p class="social__text">Да это фоташоп!!!!!!!!</p>
+              <p class="social__text">Да это фоташоп!!!!!!!!</p>
             </li>
           </ul>
 
@@ -197,7 +172,7 @@
   </footer>
 
   <!-- Шаблон изображения случайного пользователя -->
-  <template id="picture">
+  <template id="picture-template">
     <a href="#" class="picture">
       <img class="picture__img" src="" width="182" height="182" alt="Случайная фотография">
       <p class="picture__info">
@@ -208,7 +183,7 @@
   </template>
 
   <!-- Сообщение с ошибкой загрузки изображения -->
-  <template id="error">
+  <template id="error-template">
     <section class="error">
       <div class="error__inner">
         <h2 class="error__title">Ошибка загрузки файла</h2>
@@ -218,7 +193,7 @@
   </template>
 
   <!-- Сообщение об успешной загрузке изображения -->
-  <template id="success">
+  <template id="success-template">
     <section class="success">
       <div class="success__inner">
         <h2 class="success__title">Изображение успешно загружено</h2>
@@ -228,9 +203,13 @@
   </template>
 
   <!-- Экран загрузки изображения -->
-  <template id="messages">
+  <template id="loading-message-template">
     <div class="img-upload__message  img-upload__message--loading">Загружаем...</div>
   </template>
-<script src="js/functions.js"></script>
+
+  <script src="./pristine/pristine-min.js"></script>
+  <script src="./nouislider/nouislider.js"></script>
+  <script src="./js/main.js" type="module"></script>
 </body>
+
 </html>
