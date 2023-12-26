@@ -7,6 +7,7 @@ import { onSuccess, onError } from './messages.js';
 const ZOOM_SETTINGS = {
   MIN: 25,
   MAX: 100,
+  step: 25,
 };
 
 const bodyElement = document.body;
@@ -36,7 +37,7 @@ const openUploadForm = () => {
 };
 
 const changeZoom = (factor = 1) => {
-  let size = parseInt(zoomControlValueElement.value, 10) + (ZOOM_SETTINGS.MIN * factor);
+  let size = parseInt(zoomControlValueElement.value, 10) + (ZOOM_SETTINGS.step * factor);
 
   if (size < ZOOM_SETTINGS.MIN) {
     size = ZOOM_SETTINGS.MIN;

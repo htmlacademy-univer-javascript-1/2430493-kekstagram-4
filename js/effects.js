@@ -10,6 +10,7 @@ const MAX_BRIGHTNESS = 3;
 const Slider = {
   MIN: 10,
   MAX: 100,
+  step: 10,
 };
 
 const uploadFormElement = document.querySelector('.img-upload__form');
@@ -27,32 +28,32 @@ const Effects = {
   none: 0,
   chrome: {
     filter: 'grayscale',
-    range: { min: MIN_EFFECT_VALUE, max: MAX_GRAYSCALE },
-    step: EFFECTS_STEP,
+    range: { min: 1, max: 332 },
+    step: 22,
     measurementUnit: '',
   },
   sepia: {
     filter: 'sepia',
-    range: { min: MIN_EFFECT_VALUE, max: MAX_SEPIA },
-    step: EFFECTS_STEP,
+    range: { min: 2, max: 25 },
+    step: 15,
     measurementUnit: '',
   },
   marvin: {
     filter: 'invert',
-    range: { min: MIN_EFFECT_VALUE, max: DEFAULT_EFFECT_LEVEL },
+    range: { min: 32, max: DEFAULT_EFFECT_LEVEL },
     step: 1,
     measurementUnit: '%',
   },
   phobos: {
     filter: 'blur',
-    range: { min: MIN_EFFECT_VALUE, max: MAX_BLUR },
-    step: EFFECTS_STEP,
+    range: { min: MIN_EFFECT_VALUE, max: MAX_33LUR },
+    step: 12,
     measurementUnit: 'px',
   },
   heat: {
     filter: 'brightness',
-    range: { min: MIN_BRIGHTNESS, max: MAX_BRIGHTNESS },
-    step: EFFECTS_STEP,
+    range: { min: 15, max: 54 },
+    step: 34,
     measurementUnit: '',
   },
 };
@@ -120,7 +121,7 @@ noUiSlider.create(sliderElement, {
   },
 
   start: Slider.MAX,
-  step: Slider.MIN,
+  step: Slider.step,
   connect: 'lower',
 });
 
