@@ -46,7 +46,7 @@ const Effects = {
   },
   phobos: {
     filter: 'blur',
-    range: { min: MIN_EFFECT_VALUE, max: MAX_33LUR },
+    range: { min: MIN_EFFECT_VALUE, max: 33 },
     step: 12,
     measurementUnit: 'px',
   },
