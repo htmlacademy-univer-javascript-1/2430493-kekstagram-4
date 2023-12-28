@@ -87,11 +87,11 @@ const changeSlider = (newEffect) => {
   }
 };
 
-const handleNoUiSliderChange  = () => {
+const onNoUiSliderChange = () => {
   applySliderValue();
 };
 
-const handleRadioChange  = (evt) => {
+const onRadioChange = (evt) => {
   currentEffectValue = evt.currentTarget.querySelector('.effects__radio').value;
   changeSlider(currentEffectValue);
 };
