@@ -2,7 +2,7 @@ import { isEscapeKey } from './util.js';
 import { initRadios, resetFilters } from './effects.js';
 import { pristine } from './hashtags-pristine.js';
 import { uploadData } from './fetch.js';
-import { onSuccess, onError } from './messages.js';
+import { handleSuccess, handleError } from './messages.js';
 
 const ZOOM_SETTINGS = {
   MIN: 25,
@@ -24,7 +24,7 @@ const submitButton = uploadFormElement.querySelector('.img-upload__submit');
 
 const onUploadFormSubmit = (evt) => {
   evt.preventDefault();
-  uploadData(onSuccess, onError, 'POST', new FormData(evt.target));
+  uploadData(handleSuccess, handleError, 'POST', new FormData(evt.target));
 };
 
 const openUploadForm = () => {
