@@ -1,11 +1,4 @@
 const DEFAULT_EFFECT_LEVEL = 100;
-const MIN_EFFECT_VALUE = 0;
-const EFFECTS_STEP = 0.1;
-const MAX_GRAYSCALE = 1;
-const MAX_SEPIA = 1;
-const MAX_BLUR = 3;
-const MIN_BRIGHTNESS = 1;
-const MAX_BRIGHTNESS = 3;
 
 const Slider = {
   MIN: 10,
@@ -46,7 +39,7 @@ const Effects = {
   },
   phobos: {
     filter: 'blur',
-    range: { min: MIN_EFFECT_VALUE, max: 33 },
+    range: { min: 0, max: 33 },
     step: 12,
     measurementUnit: 'px',
   },

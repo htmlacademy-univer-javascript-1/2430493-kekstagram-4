@@ -1,49 +1,49 @@
-import { closeModal } from './modal.js';
-import { isEscapeKey } from './utilities.js';
+import { closeForm } from './form.js';
+import { isEscapeKey } from './util.js';
 
-const documentBody = document.body;
-const errorTemplate = documentBody.querySelector('#error').content.querySelector('section');
-const successTemplate = document.querySelector('#success').content.querySelector('section');
+const body = document.body;
+const errorMessage = body.querySelector('#error').content.querySelector('section');
+const successMessage = document.querySelector('#success').content.querySelector('section');
 
-const onPopupContainerClick = (event) => {
-  const clickedElement = event.target;
-  if (clickedElement.classList.contains('success__inner') || clickedElement.classList.contains('error__inner')) {
+const onPopupClick = (evt) => {
+  const clickElem = evt.target;
+  if (clickElem.classList.contains('success__inner') || clickElem.classList.contains('error__inner')) {
     return;
   }
 
   closePopup();
 };
 
-const onEscapeKeyDown = (event) => {
-  event.preventDefault();
-  if (isEscapeKey(event)) {
+const onEscKeyDown = (evt) => {
+  evt.preventDefault();
+  if (isEscapeKey(evt)) {
     closePopup();
   }
 };
 
 function closePopup() {
-  documentBody.removeEventListener('click', onPopupContainerClick);
-  document.removeEventListener('keydown', onEscapeKeyDown);
-  documentBody.removeChild(documentBody.lastChild);
+  body.removeEventListener('click', onPopupClick);
+  document.removeEventListener('keydown', onEscKeyDown);
+  body.removeChild(body.lastChild);
 }
 
 const showMessage = (messageTemplate) => {
   const message = messageTemplate.cloneNode(true);
   message.style.zIndex = 100;
 
-  document.addEventListener('keydown', onEscapeKeyDown);
-  documentBody.addEventListener('click', onPopupContainerClick);
+  document.addEventListener('keydown', onEscKeyDown);
+  body.addEventListener('click', onPopupClick);
 
-  documentBody.appendChild(message);
+  body.appendChild(message);
 };
 
-const handleSuccess = () => {
-  closeModal();
-  showMessage(successTemplate);
+const onSuccess = () => {
+  closeForm();
+  showMessage(successMessage);
 };
 
-const handleError = () => {
-  showMessage(errorTemplate);
+const onError = () => {
+  showMessage(errorMessage);
 };
 
-export { handleSuccess, handleError };
+export { onSuccess, onError };
